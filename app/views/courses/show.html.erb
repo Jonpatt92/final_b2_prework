@@ -1,0 +1,13 @@
+ <!-- the course's name -->
+ <!-- each student in the course listed in order from highest grade to lowest grade -->
+
+<h2><%= @course.name %></h2>
+<h4>Students:</h4>
+<ol>
+<% @course.sorted_students.each_with_index do |student, index| %>
+  <section id="student-<%= index %>">
+    <li> <%= student.name %></li>
+    <p>Grade: <%= student.grade(@course.id) %></p>
+  </section>
+<% end %>
+</ol>
